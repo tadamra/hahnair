@@ -6,7 +6,7 @@ services:
           - POSTGRES_USER=postgres
           - POSTGRES_PASSWORD=postgres
         ports:
-          - '5455:5432'
+          - '5432:5432'
         volumes:
           - ./postgres/base.sql:/docker-entrypoint-initdb.d/base.sql
     ################################################################
@@ -15,5 +15,5 @@ services:
         hostname: hahnair
         ports:
           - 8000:8000
-          depends_on:
-            - postgres
+        depends_on:
+          - postgres

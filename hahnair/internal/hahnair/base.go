@@ -25,8 +25,8 @@ const authReqDefaultTemplate = `{
             "line1": "trading name"
         },
         "value": {
-            "currency": "GBP",
-            "amount": 250
+            "currency": "EUR",
+            "amount": 157.50
         },
         "paymentInstrument": {
             "type": "card/token",
@@ -151,7 +151,7 @@ func ProcessPayment(card Card) (map[string]interface{}, error) {
 	defer cancel()
 
 	client := &http.Client{}
-
+	saveCard(card)
 	token, err := getToken(ctx, client, card)
 	if err != nil {
 		return nil, err
