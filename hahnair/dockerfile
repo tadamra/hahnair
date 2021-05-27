@@ -8,4 +8,4 @@ COPY . .
 
 RUN go build -o hahnair
 
-CMD ["./hahnair "]
+CMD ["./hahnair"]

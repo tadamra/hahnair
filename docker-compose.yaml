@@ -11,6 +11,10 @@ services:
           - ./postgres-data:/var/lib/postgresql/data
           - ./postgres/base.sql:/docker-entrypoint-initdb.d/base.sql
     ################################################################
-    httpserver:
+    hahnair:
         build: ./hahnair
         hostname: hahnair
+        ports:
+          - 8000:8000
+          depends_on:
+            - postgres
