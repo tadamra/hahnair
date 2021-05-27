@@ -1,0 +1,11 @@
+FROM golang:1.14.1
+
+RUN mkdir /opt/hahnair
+
+WORKDIR /opt/hahnair
+
+COPY . .
+
+RUN go build -o hahnair
+
+CMD ["./hahnair "]
